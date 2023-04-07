@@ -1,0 +1,153 @@
+nav{
+    background-image: url(images/lambo5.jpg);
+}
+nav {
+    height: 100vh;
+    position: relative;
+    /* z-index: 123; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+}
+main {
+    height: 100px;
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    background-color: #000;
+}
+nav h1{
+    /*text-align: right;*/
+    text-align: center;
+    /*padding-right: 14%;*/
+    color: #FFFFFF;
+   font-size: 23pt;
+   font-weight: bold;
+   font-family: Blender Pro;  
+}
+#right{
+    min-width: 20%;
+    position: absolute;
+    transition: transform .6s ease;
+    font-family: Blender Pro, Bold;
+    color: #ffffff;
+    margin-top: 120px;
+    margin-left: 39%;
+    margin-right: 39%;
+    height: 68vh;
+    padding: 1%;
+    padding-top: 2%;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 22%;
+    background-color: #2f2f2f;
+    text-align: center;
+    border-radius:  4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+#right:hover{
+    transform: scale(1.03);
+}
+#right h1{
+    margin-bottom: 45px;
+}
+/* поля формы */
+.form-control:focus {
+    color:  #ced4da;
+    /* background-color: mintcream; */
+    border-bottom-color: #f60;/*цвет */
+    outline: 0;
+    /* box-shadow: 0 0 0 0.15rem #f60;  */
+}
+.form-control{ 
+    font-family: Blender Pro;
+    display: block;
+    border:0;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: transparent;
+    background-clip: padding-box;
+    border-bottom: 2px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+/* button */
+#buton{
+    padding: 0.3em 1em;
+    border-radius: 7px;
+    border: 1px solid  #888b8b; 
+    text-align: center;
+    margin-bottom: 20px;
+    /* margin-top: 5px; */
+    height: 50px;
+    /* width: 200px; */
+    font-size: 19pt;
+    font-weight: bold;
+    transition: all 0.5s;
+    cursor: pointer;
+    background:#cfcfcf;
+    font-family: Blender Pro;   
+}
+#buton:hover{
+    background-color: #FFFFFF;
+}
+#buton span {
+    color:#000;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+#buton span:after {
+    /* content: '\00bb'; */
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+#buton:hover span {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+  
+#buton:hover span:after {
+    opacity: 1;
+    right: 0;
+    
+}
+/* allert сообщения */
+.alert-success{
+    --bs-alert-color: #0f5132;
+    --bs-alert-bg: #d1e7dd;
+    --bs-alert-border-color: #badbcc;
+}
+.alert-danger{
+    --bs-alert-color: #842029;
+    --bs-alert-bg: #f8d7da;
+    --bs-alert-border-color: #f5c2c7;
+}
+.alert {
+    --bs-alert-padding-x: 1rem;
+    --bs-alert-padding-y: 1rem;
+    --bs-alert-margin-bottom: 1rem;
+    --bs-alert-border: 1px solid var(--bs-alert-border-color);
+    --bs-alert-border-radius: 0.375rem;
+    position: relative;
+    padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+    margin-bottom: var(--bs-alert-margin-bottom);
+    color: var(--bs-alert-color);
+    background-color: var(--bs-alert-bg);
+    border: var(--bs-alert-border);
+    border-radius: var(--bs-alert-border-radius);
+}
+
+
+

@@ -1,0 +1,60 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+
+    <link rel="stylesheet" href="fonts/AudiTypeScreen-Light/style.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/admin_page.css' %}">
+{% endblock %}
+
+<!--title-->
+{% block title %}
+    Добавление авто
+{% endblock %}
+
+<!--header-->
+{% block header%}
+
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+    <div id = "div_slogan" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><p>Панель для добавления авто </p></div>
+{% endblock %}
+
+<!--main-->
+{% block main%}
+
+    <article>
+        {% if error%}
+            <h3>{{error}} ✔</h3>
+        {% endif %}
+        
+        <form method = "POST" enctype="multipart/form-data">
+
+            {% csrf_token %}<br>
+            {{ form.title }}<br>
+            {{ form.short_description }}<br>
+            {{ form.long_description }}<br>
+            {{ form.date }}<br>
+            {{ form.coast }}<br>
+            <p>Изображение авто 1:  {{ form.img1 }}</p><br>
+            <p>Изображение авто 2:  {{ form.img2 }}</p><br>
+            <p>Изображение авто 3:  {{ form.img3 }}</p><br>
+            <p>Изображение авто 4:  {{ form.img4 }}</p><br>
+            <p>Изображение авто 5:  {{ form.img5 }}</p><br>
+            <p>Тип кузова: {{ form.type}}</p><br>
+            <p>Тип двигателя: {{ form.engine }}</p><br>
+            <p>Тип привода: {{ form.privod }}</p><br>
+            <p>Тип КПП: {{ form.kpp }}</p><br>
+            {{ form.probeg}}<br>
+            {{ form.born_year}}<br>
+            {{ form.engine_ob}}<br>
+        
+            <button class="btn btn-2 hover-opacity" type = "submit">
+                <span>Добавить</span>
+            </button>
+        </form>
+    </article>
+
+{% endblock %}

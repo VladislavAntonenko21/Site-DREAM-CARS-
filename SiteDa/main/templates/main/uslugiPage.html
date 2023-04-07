@@ -1,0 +1,47 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+    <link rel="stylesheet" href="{% static 'main/css/for_uslugi_page.css' %}">
+    <link rel="stylesheet" href="fonts/AudiTypeScreen-Light/style.css" type="text/css" />
+    
+{% endblock %}
+
+<!--title-->
+{% block title %}
+    Наши услуги
+{% endblock %}
+
+<!--header-->
+{% block header%}
+    
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+    <div id = "div_slogan" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><p>Цены на наши услуги </p></div>
+{% endblock %}
+
+<!--main-->
+{% block main%}
+    <main>
+        <article>
+            <h1 data-aos="fade-right">Услуги</h1>
+
+            <div class="elementor-image"></div>
+
+            <div class="elementor-widget-wrap">
+                
+                <h4 class="title" data-aos="fade-left">Что входит в услуги покупки транспорта?</h4>	
+                    	
+                <div class="art">
+                    <p>1. Подбор и проверка авто<br>2. Рекомендации и проверка «кукол»<br>3. Покупка\ставки транспорта через наш аккаунт&nbsp;<br>4. Оплата за авто аукциону<br>5. Подготовка документов на экспорт<br>6. Логистика по США<br>7. Погрузка в контейнер/на судно авто одиночек<br>8. Отправка в порт назначения<br>9. Выгрузка авто в порту назначения и таможенная очистка.<br>10. Доставка авто на ремонтную базу.<br>11. Заказ запчастей и ремонт автомобиля.<br>12. Сертификация и первая постановка на учёт<br>13. Выдача авто клиенту, или же доставка в город клиента (по согласованию)</p>					</div>
+                </div>
+
+            </div>
+
+        </article>
+    </main>
+    
+
+{% endblock %}

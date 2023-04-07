@@ -1,0 +1,160 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+    <link rel="stylesheet" href="{% static 'main/css/for_card.css' %}">
+    <link rel="stylesheet" href="fonts/AudiTypeScreen-Light/style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/Roboto/roboto.css" type="text/css" />
+{% endblock %}
+
+<!--title-->
+{% block title %}
+
+{% if new_auto %}
+{% for el in new_auto %}
+
+    {{el.title}}
+
+{% endfor %}
+{% endif %}
+
+{% endblock %}
+
+<!--header-->
+{% block header%}
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+{% endblock %}
+
+<!--main-->
+{% block main%}
+    <main>
+        <article class="main_article">
+            <script>AOS.init()</script>
+
+            {% if new_auto %}
+                {% for el in new_auto %}
+                <div class = "first_div">
+                  <h1>{{el.title}}</h1>
+                  <h2 class = "price"><span>Цена: </span><span class = "da">{{el.coast}}</span> </h2>
+                </div>
+                
+                <div class = "short_inf" data-aos="fade-left">
+                    <h3 class="discrip"><div class="card__icon"><img class="card__pic" src="https://americamotors.by/img/icon-6.svg" alt=""></div>Двигатель:<span></span>{{el.engine}}</h3>
+                    <h3 class="discrip" ><div class="card__icon"><img class="card__pic" src="https://americamotors.by/img/icon-5.svg" alt=""></div>Тип кузова:<span></span>{{el.type}}</h3>
+                    <h3 class="discrip"><div class="card__icon"><img class="card__pic" src="https://americamotors.by/img/icon-8.svg" alt=""></div>Привод:<span></span>{{el.privod}}</h3>
+                    <h3 class="discrip"><div class="card__icon"><img class="card__pic" src="https://americamotors.by/img/icon-7.svg" alt=""></div>Коробка:<span></span>{{el.kpp}}</h3>
+                    <h3 class="discrip"><div class="card__icon"><img class="card__pic" src="https://americamotors.by/img/icon-3.svg" alt=""></div>Объем двигателя:<span></span>{{el.engine_ob}}</h3>
+                    <h3 class="discrip"><div class="card__icon"><img class="card__pic" src="https://americamotors.by/img/icon-4.svg" alt=""></div>Год выпуска:<span></span>{{el.born_year}}</h3>
+                    
+                    <h4 class = "probeg">Пробег: {{el.probeg}}</h4>
+                    <h3 class = "date">Дата публикации:{{el.date}}</h3>
+
+                    <link href="/examples/libs/ui-components/itc-slider/itc-slider.css" rel="stylesheet">
+                    <script src="/examples/libs/ui-components/itc-slider/itc-slider.js" defer></script>
+                </div>
+
+                <section id="slider_bl" data-aos="fade-right">
+                    <div class="wrapper">
+                      <input checked type=radio name="slider" id="slide1" />
+                      <input type=radio name="slider" id="slide2" />
+                      <input type=radio name="slider" id="slide3" />
+                      <input type=radio name="slider" id="slide4" />
+                      <input type=radio name="slider" id="slide5" />
+                      <div class="slider-wrapper">
+                        <div class=inner>
+
+                          <article>
+                            <div class="info top-left">
+                              <h3></h3></div>
+                            <img style="background-image: url('{{el.img1.url}}'); background-size: cover; " />
+                          </article>
+
+                          <article>
+                            <div class="info bottom-right">
+                              <h3></h3></div>
+                            <img style="background-image: url('{{el.img2.url}}'); background-size: cover; " />
+                          </article>
+
+                          <article>
+                            <div class="info bottom-left">
+                              <h3></h3></div>
+                            <img style="background-image: url('{{el.img3.url}}'); background-size: cover; " />
+                          </article>
+
+                          <article>
+                            <div class="info top-right">
+                              <h3></h3></div>
+                            <img style="background-image: url('{{el.img4.url}}'); background-size: cover; " />
+                          </article>
+
+                          <article>
+                            <div class="info top-right">
+                              <h3></h3></div>
+                            <img style="background-image: url('{{el.img5.url}}'); background-size: cover; " />
+                          </article>
+
+
+                        </div>
+                      </div>
+                      <div class="slider-prev-next-control">
+                        <label for=slide1></label>
+                        <label for=slide2></label>
+                        <label for=slide3></label>
+                        <label for=slide4></label>
+                        <label for=slide5></label>
+                      </div>
+                      <div class="slider-dot-control">
+                        <label for=slide1></label>
+                        <label for=slide2></label>
+                        <label for=slide3></label>
+                        <label for=slide4></label>
+                        <label for=slide5></label>
+                      </div>
+                    </div>
+                </section>
+
+                
+                <div class="card__wrap">
+                    <div class="card__content">
+
+                    <h2 class = "about_auto">Общая информация</h2>
+                    <div class = "all_disc">
+                        <h3>{{el.short_description}}</h3>
+                        <h3>{{el.long_description}}</h3>
+                        <hr>
+                    <p>Перед покупкой мы детально изучаем историю автомобиля, его техническое состояние.<br>
+                    При необходимости можно заказать доп. осмотр и получить полную инспекцию автомобиля.</p>
+                    <br>
+                    <p>Наша компания&nbsp;<strong>DREAM CARS</strong></a>&nbsp;работает только с проверенными&nbsp;транспортными компаниями. Автовозы и контейнеры&nbsp;застрахованы, что является гарантией финансовой безопасности заказчика.</p>
+                    <br>
+                    <p>Не смогли найти автомобиль, который удовлетворяет Вашим запросам? Нет проблем – можно оформить заявку на&nbsp;поиск и подбор нужного вам варианта прямо у нас на сайте, на главной странице и наши менеджеры свяжутся с Вами, как&nbsp;только появится соответствующий вашим требованиям&nbsp;автомобиль.</p>
+                    <br>
+                    <p>Если Вы решитесь покупать автомобиль в Америке. Европы или Китая, но опыта в подборе нет, смело звоните, или приезжайте к нам в офис и наши специалисты Вам все детально расскажут.</p>
+                    <br>
+                    <p>Для покупки авто необходимо заключить договор и принять участие в аукционе. После этого автомобиль оплачивается вами через банк, а мы занимаемся его доставкой к Вам!</p>
+                    <p>Наша компания оказывает полный спектр услуг: поиск авто, подбор авто согласно заявке, проверка автомобиля, полное документальное сопровождение, помощь при растаможке. Экономьте свое время и деньги!</p>
+                    <br>
+                    <p><strong>DREAM CARS</strong>&nbsp;– просто доверьте работу профессионалам!</p>
+                    </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                {% endfor %}
+            {% endif %}
+
+        </article>
+    </main>
+{% endblock %}

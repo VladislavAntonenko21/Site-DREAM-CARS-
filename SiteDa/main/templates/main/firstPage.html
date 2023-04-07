@@ -1,0 +1,180 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+    <link rel="stylesheet" href="{% static 'main/css/first_page.css' %}">
+    <link rel="stylesheet" href="fonts/AudiTypeScreen-Light/style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/Roboto/roboto.css" type="text/css" />
+{% endblock %}
+
+<!--title-->
+{% block title %}
+    Dream Cars
+{% endblock %}
+
+<!--header-->
+{% block header%}
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+    <div id = "div_slogan"><p id = "Slogan">Автомобиль вашей мечты </p></div>
+    <p id = "slogan2" data-aos="fade-up">Компания DREAM CARS осуществляет мечты миллионов автолюбителей,<br> доставляя их мечту прямиком из США</p>
+{% endblock %}
+
+<!--main-->
+{% block main%}
+    <main>
+        <article>
+            <script>AOS.init()</script>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+            <!-- <h1>Авто в наличии</h1> -->
+        <div class = "da">
+            {% if new_auto%}
+        
+                {% if name_car %}<!--отбор по марке авто-->
+                <div class="d3">
+                    <h1 data-aos="fade-left">{{name_car}}</h1>
+
+                    <form data-aos="fade-right" action="{% url 'FirstPage' %}" method="get">
+                      <input name="search_value" type="text" placeholder="Искать здесь...">
+                      <button type="submit"></button>
+                    </form>
+                </div>
+                {% else %}
+                <div class="d3">
+                    <h1 data-aos="fade-left">Каталог автомобилей</h1>
+
+                    <form data-aos="fade-right" action="{% url 'FirstPage' %}" method="get">
+                      <input name="search_value" type="text" placeholder="Искать здесь...">
+                      <button type="submit"></button>
+                    </form>
+                </div>
+                {% endif %}
+
+            {% elif old_auto %}
+
+                <div class="d3">
+                    <h1 data-aos="fade-left">{{ type }} в наличии</h1>
+
+                    <form data-aos="fade-right" action="{% url 'FirstPage' %}">
+                        <input name="search_value" type="text" placeholder="Искать здесь...">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+
+            {% else %}
+
+                <div class="d3">
+                    <h1 data-aos="fade-left">Автомобилей не найдено</h1>
+
+                    <form data-aos="fade-right" action="{% url 'FirstPage' %}">
+                    <input name="search_value" type="text" placeholder="Искать здесь...">
+                    <button type="submit"></button>
+                    </form>
+                </div>
+
+            {% endif %}
+
+            <div class="catalog__sorting">
+                <div class="catalog__group">
+                <a name = "sort_value" class="catalog__link" href="/Acura">Acura</a>
+                <a class="catalog__link" href="/Alfa%Romeo">Alfa Romeo</a>
+                <a class="catalog__link" href="/Audi">Audi</a>
+                <a class="catalog__link" href="/BMW">BMW</a>
+                <a class="catalog__link" href="/Buick">Buick</a>
+                <a class="catalog__link" href="/Cadilac">Cadillac</a>
+                <a class="catalog__link" href="/Chevrolet">Chevrolet</a>
+                <a class="catalog__link" href="/Chrysler">Chrysler</a>
+                <a class="catalog__link" href="/Dodge">Dodge</a>
+                <a class="catalog__link" href="/Fiat">Fiat</a>
+                <a class="catalog__link" href="/Ford">Ford</a>
+                <a class="catalog__link" href="/Genesis">Genesis</a>
+                <a class="catalog__link" href="/GMC">GMC</a>
+                <a class="catalog__link" href="/Honda">Honda</a>
+                <a class="catalog__link" href="/HONGQI">HONGQI</a>
+                <a class="catalog__link" href="/Hyundai">Hyundai</a>
+                <a class="catalog__link" href="/Infiniti">Infiniti</a>
+                <a class="catalog__link" href="/Jaguar">Jaguar</a>
+                <a class="catalog__link" href="/Jeep">Jeep</a>
+                <a class="catalog__link" href="/Kia">Kia</a>
+                <a class="catalog__link" href="/Land%Rover">Land Rover</a>
+                <a class="catalog__link" href="/Lexus">Lexus</a>
+                <a class="catalog__link" href="/Lincoln">Lincoln</a>
+                <a class="catalog__link" href="/Mazda">Mazda</a>
+                <a class="catalog__link" href="/Mercedes-Benz">Mercedes-Benz</a>
+                <a class="catalog__link" href="/Mini">Mini</a>
+                <a class="catalog__link" href="/Mitsubishi">Mitsubishi</a>
+                <a class="catalog__link" href="/Nissan">Nissan</a>
+                <a class="catalog__link" href="/Porsche">Porsche</a>
+                <a class="catalog__link" href="/Subaru">Subaru</a>
+                <a class="catalog__link" href="/Toyota">Toyota</a>
+                <a class="catalog__link" href="/Volkswagen">Volkswagen</a>
+                <a class="catalog__link" href="/Volvo">Volvo</a>
+                </div>
+            </div>  
+
+            {% if new_auto %}
+                {% for el in new_auto %} <!-- el - строка таблицы -->
+
+                <div class = "new_car"   >  <!--data-aos="zoom-in"-->
+                    {% if el.img1 %}
+                        <div  class = "my_image" >
+                            <img src="{{el.img1.url}}" width="100%" height="auto" max-height = "300px" >
+                        </div>
+                    {% else %}
+                        Нет изображения
+                    {% endif %}
+                    
+                    <h3>{{ el.title }}</h3>
+                    <br>
+                    <p>Тип кузова:<span></span>{{ el.type }}</p>
+                    <p>Двигатель:<span></span>{{ el.engine }}</p>
+                    <p>Объем двигателя:<span></span>{{ el.engine_ob }} л</p>
+                    <p>Привод:<span></span>{{ el.privod }}</p>
+                    <p>Год выпуска:<span></span>{{ el.born_year }}</p>
+                    <br>
+                    <h4 style="font-size:2vw;">От {{ el.coast }}</h4>
+                    {% if request.user.is_authenticated %}
+                    <button class = "btn btn-2 hover-opacity"><a href="cars/{{el.title}}" target="_blank"><span>Подробнее</span></a></button>
+                    {% endif %}
+                </div>
+
+                {% endfor %}
+            {% elif old_auto %}
+                {% for el in old_auto %} <!-- el - строка таблицы -->
+                {% if el.type == type %} <!-- проверка совпадает ли тип в строке таблицы с заданным-->
+
+                <div class = "new_car">
+                    {% if el.img1 %}
+                        <div  class = "my_image" >
+                            <img src="{{el.img1.url}}" width="100%" height="auto" max-height = "300px" >
+                        </div>
+                    {% else %}
+                        Нет изображения
+                    {% endif %}
+                    <h3>{{ el.title }}</h3>
+                    <br>
+                    <p>Тип кузова:<span></span>{{ el.type }}</p>
+                    <p>Двигатель:<span></span>{{ el.engine }}</p>
+                    <p>Объем двигателя:<span></span>{{ el.engine_ob }} л</p>
+                    <p>Привод:<span></span>{{ el.privod }}</p>
+                    <p>Год выпуска:<span></span>{{ el.born_year }}</p>
+                    <br>
+                    <h4 style="font-size:2vw;">От {{ el.coast }}</h4>
+                    {% if request.user.is_authenticated %}
+                    <button class = "btn btn-2 hover-opacity"><a href="cars/{{el.title}}" target="blank"><span>Подробнее</span></a></button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+            {% else %}
+                <h1>Ничего не найдено</h1>
+            {% endif %}
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+        </div>
+        </article>
+    </main>
+{% endblock %}

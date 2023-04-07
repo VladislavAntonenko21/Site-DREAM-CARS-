@@ -1,0 +1,255 @@
+nav{
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(images/mustang2.jpg);
+    height: 111vh;
+    position: relative;
+    background-size: cover;
+}
+article {
+    
+    background-color: #f5f5f5;
+    padding:3%;
+    width: 100%;
+    float: left;
+    min-height: calc(100vh*2);
+    justify-content: center;
+}
+main {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    min-height: calc(100vh - 500px);
+}
+#Slogan{
+    position: relative;
+    color: #f60;
+    transition: transform .6s ease;
+    font-family: Blender Pro;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4.5vw;
+    font-weight: 900;
+    background-color: black;
+    cursor:default;
+}
+#Slogan:hover{
+    transform: scale(1.03);
+}
+#slogan2{
+    color: #ffffff;
+    font-family: Blender Pro;
+    font-size: 2vmax;
+    margin-top: 38vh;
+    margin-left: 5vw;
+    font-weight: bold;
+}
+#div_slogan{
+    position: relative;
+    width: 58%;
+    margin-left: 7%;
+    padding-top: 23vh; 
+}
+
+/* поиск */
+.d3 {
+    padding-right: 3vw;
+    /* float: right; */
+    width: 100%;
+    height: 6vh;
+    z-index: 110;
+    position: relative;
+}
+.d3 form {
+    border:2px solid #000;
+    float: right;
+    width: 30%;
+}
+.d3 input, .d3 button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.d3 input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+.d3 button {
+  height: 30px;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.d3 button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #f60;
+}
+
+article h1{
+    float: left;
+    font-family: Ubuntu, Helvetica,Arial, sans-serif;
+    font-weight: 200;
+    font-size: 3vw;
+    margin-bottom: 4vh;
+    margin-left: 3vw;
+}
+
+.new_car{
+    min-width: 250px;
+    transition: transform .6s ease;
+    float: left;
+    width:30.5%;
+    height: min-content;
+    background-color:#f60;
+    margin:20px;
+    padding:20px;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.25);
+}
+.new_car:hover{
+    transform: scale(1.03);
+}
+.new_car h3{
+    font-family: 'Blender Pro';
+    font-weight: normal;
+    font-size: 2vmax;
+}
+.new_car >p{
+    margin-bottom:10px;
+    font-family: 'Roboto',sans-serif;
+    width: 100%;
+    line-height: 11px;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    align-items: flex-end;
+    padding: 2px;
+}
+.new_car >p> span{  
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin-top: auto;
+}
+.new_car> h4{
+    font-family: Blender Pro;
+    font-weight: bold;
+}
+
+.my_image img{
+    background-size: contain;
+    border-radius: 10px;
+}
+.my_image{
+    margin-bottom:4vh ;
+}
+
+:active, :hover, :focus {
+    outline: 0!important;
+    outline-offset: 0;
+}
+::before,::after {
+    position: absolute;
+    content: "";
+}
+  
+.btn-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 10px auto 35px;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 50%; 
+    height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    min-width: 150px;
+}
+.btn span {         
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 15px 20px;
+      transition: 0.3s;
+}
+  
+
+.btn::before {
+    background-color: rgb(28, 31, 30);
+    transition: 0.3s ease-out;
+}
+.btn span {
+    color: rgb(28, 31, 30);
+    border: 1px solid rgb(28, 31, 30);
+    transition: 0.2s;
+}  
+.btn span:hover {
+    color: #f60;
+    transition: 0.2s 0.1s;
+}
+  
+/* 10. hover-opacity */
+.btn.hover-opacity::before {
+    top:0; bottom: 0; right: 0;
+    height: 100%; width: 100%;
+    opacity: 0;
+}
+.btn.hover-opacity:hover::before {
+    opacity: 1;
+}
+
+/* auto_list */
+.catalog__group{
+    width: 90%;
+    margin-top: 10vh;
+    margin-bottom: 8vh;
+    column-count: 7;
+    column-gap: 11vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.catalog__link {
+    font-family: Blender Pro;
+    font-size: 3vh;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding-left: 14px;
+    line-height: 2;
+    color: #333;
+    -webkit-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+}
+
+.catalog__link:hover{
+    color:#f60;
+}
+
+/* стрелки > */
+.catalog__group .catalog__link:before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 5px;
+    height: 9px;
+    background: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.74995 4.9999L0.199951 1.5999L1.79995 0.399902L5.24995 4.9999L1.79995 9.5999L0.199951 8.3999L2.74995 4.9999Z' fill='%23419FDA'/%3E%3C/svg%3E%0A") no-repeat 50% 50%/auto 100%;
+}

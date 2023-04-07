@@ -1,0 +1,56 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+    <link rel="stylesheet" href="{% static 'main/css/for_reg_page.css' %}">
+{% endblock %}
+
+<!--title-->
+{% block title %}
+    Вход
+{% endblock %}
+
+<!--header-->
+{% block header%}
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+    
+    <div id = "right">
+        <h1>Вход</h1>
+        <form method="post" >
+            <!-- {{form.as_p}} --> <!--стандартные поля-->
+            {% csrf_token %}
+            {{ form.username }}<br>
+            {{ form.password }}<br>
+
+            <button  type = "submit" id = "buton"><span>Войти</span></button>
+            {% if messages%}
+                {% for message in messages%}
+
+                    {% if message.tags == 'error'%}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                    {% else%}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endif%}
+
+                {% endfor %}
+            {% endif%}
+        </form>
+
+    </div>
+{% endblock %}
+
+<!--main-->
+{% block main%}
+
+    <main>
+        
+    </main>
+    
+{% endblock %}

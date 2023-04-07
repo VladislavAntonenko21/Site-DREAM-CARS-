@@ -1,0 +1,64 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+    <link rel="stylesheet" href="{% static 'main/css/for_reg_page.css' %}">
+    
+{% endblock %}
+
+<!--title-->
+{% block title %}
+    Регистрация
+{% endblock %}
+
+<!--header-->
+{% block header%}
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+    
+    <div id = "right">
+        <h1>Регистрация</h1>
+        <form method="post" >
+            {% csrf_token %}
+
+            <!-- {{form.as_p}} --> <!--стандартные поля-->
+            {{ form.username }}<br>
+            {{ form.email }}<br>
+            {{ form.password1 }}<br>
+            {{ form.password2 }}<br>
+            
+            <!--<input type="text" placeholder = "Логин" class = "form-control"><br>-->
+            <!--<input type="text" placeholder = "Пароль" class = "form-control"><br>-->
+            <!--<input type="text" placeholder = "Подтверждение Пароля" class = "form-control"><br>-->
+            <!--<input type="text" placeholder = "E-mail" class = "form-control"><br>-->
+            <button type = "submit" id = "buton" > <span>Регистрация</span></button>
+            {% if messages%}
+                {% for message in messages%}
+
+                    {% if message.tags == 'error'%}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                    {% else%}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endif%}
+
+                {% endfor %}
+            {% endif%}
+        </form> 
+    </div>
+
+
+{% endblock %}
+
+<!--main-->
+{% block main%}
+    <main>
+        <!-- <article id = "main_reg">
+        </article> -->
+    </main>
+{% endblock %}

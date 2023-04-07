@@ -1,0 +1,51 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+<!--link-->
+{% block link%}
+    <link rel="stylesheet" href="fonts/AudiTypeScreen-Light/style.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/for_buyer_page.css' %}">
+{% endblock %}
+
+<!--title-->
+{% block title %}
+    Информация для покупателей
+{% endblock %}
+
+<!--header-->
+{% block header%}
+    
+{% endblock %}
+
+<!-- Блок с картинкой -->
+{% block Article%}
+    <div id = "div_slogan" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><p>Покупателям </p></div>
+{% endblock %}
+
+<!--main-->
+{% block main%}
+    <main>
+        <article>
+            <h1 data-aos="fade-right">Информация для покупателей</h1>
+
+            <div id = "ship_link" class = "links">
+                
+                <h1>Процес покупки / доставки</h1>
+                <a href = "{% url 'Buy_Ship_Page' %}" >Узнайте больше</a>
+
+            </div>
+
+            <div id = "straxovanie_link" class = "links">
+                <h1>Процес страхования авто</h1>
+                <a href = "{% url 'InsurancePage' %}" >Узнайте больше</a>
+
+            </div>
+
+            <!-- <div id = "coast_link" class = "links">
+                <a href = "{% url 'InsurancePage' %}">Узнайте больше</a>
+
+            </div> -->
+
+        </article>    
+    </main>
+    
+{% endblock %}

@@ -1,0 +1,73 @@
+nav{
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/gtr_3.jpg);
+    height: 70vh;
+    position: relative;
+    background-size: cover;
+}
+article {
+    background-color: #f5f5f5;
+    padding:3%;
+    width: 100%;
+    float: left;
+    min-height: calc(100vh);
+}
+main {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    min-height: calc(100vh - 500px);
+}
+#div_slogan p{
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+    transition: transform .6s ease;
+    font-family: Blender Pro;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 4.5vw;
+    font-weight: 900;
+    /* background-color: black; */
+    cursor:default;
+    padding-top: 23vh;
+    padding-left: 30vw;
+    margin-right: 30vw;
+}
+
+article h1{
+    font-family: Audi Type;
+    font-weight: 500;
+    font-size: 25pt;
+    margin-left: 15px;
+}
+
+.elementor-widget-wrap{
+    position: relative;
+    float: right;
+    margin-right: 5%;
+}
+.elementor-image{
+    margin-top: 8vh;
+    margin-left: 5%;
+    background-image: url(images/money.jpeg);
+    width: 38vw;
+    height: 55vh;
+    background-size: cover;
+    position: relative;
+    float: left;
+}
+.title{
+    
+    font-family: Ubuntu, Helvetica,Arial, sans-serif;
+    font-weight: 200;
+    font-size: 2vw;
+    margin-left: 6vw;
+}
+.art{
+    font-family: Ubuntu, Helvetica,Arial, sans-serif;
+    line-height: 5vh;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
